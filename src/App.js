@@ -11,6 +11,7 @@ import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import BookDetails from "./pages/BookDetails";
 import Admin from './pages/Admin';
+import Auth from './pages/Auth';
 
 // Components
 import Header from "./components/Header"
@@ -43,6 +44,9 @@ const App = () => {
         </Route>
         <Route path="/admin">
           <Admin />
+        </Route>
+        <Route path="/auth">
+          <Auth />
         </Route>
         <Route path="*">
           <Error />
