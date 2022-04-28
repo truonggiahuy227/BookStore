@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
+import { AmplifyAuthenticator, AmplifySignUp } from '@aws-amplify/ui-react';
 import { AuthState, onAuthUIStateChange } from '@aws-amplify/ui-components';
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
@@ -19,16 +20,20 @@ const Checkout = () => {
     }, []);
 
 
-    return authState === AuthState.SignedIn && user ? (
-        <section className="checkout-wrapper">
+
+    return (
+        <AmplifyAuthenticator>
+            <section className="checkout-wrapper">
                 <Elements stripe={stripePromise}>
                     <section>
                         <h2>Time to Checkout?</h2>
                         <CheckoutForm />
                     </section>
                 </Elements>
-        </section>
-    ) : (<Auth/>)
+            </section>
+        </AmplifyAuthenticator>
+        
+    )
 }
 
 export default Checkout

@@ -35,9 +35,9 @@ const Header = () => {
                     <li>
                         <Link to="/checkout">Checkout</Link>
                     </li>
+                    {console.log(user)}
                     {authState === AuthState.SignedIn && user ? (
-                        
-                        <AmplifySignOut></AmplifySignOut>
+                        <AmplifySignOut/>
                     ):(
                         <li>
                         <Link to="/auth">Sign in/Sign up</Link>
