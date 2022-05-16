@@ -14,6 +14,7 @@ html {
 
 body {
   font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
 }
 
 h1 {
@@ -62,6 +63,7 @@ a {
 /* Nav Section */
 
 .main-head {
+  padding: 0 40px;
   background: #131c27;
   color: white;
 }
@@ -72,8 +74,9 @@ nav {
   align-items: center;
   min-height: 10vh;
   padding: 2rem;
-  width: 90%;
+  width: 100%;
   margin: auto;
+  justify-content: space-between;
 }
 
 nav ul {
@@ -82,6 +85,10 @@ nav ul {
   justify-content: space-around;
   align-items: center;
   list-style: none;
+}
+
+#root {
+  height: 90vh;
 }
 
 #logo {
@@ -158,7 +165,13 @@ nav ul {
 
 .book-image {
   flex: 3 1 100rem;
-  padding: 2rem 0rem;
+  padding: 1rem 0rem;
+}
+
+.book-image img{
+  width:100%;
+  object-fit:cover;
+  height:100%;
 }
 
 .book-link {
@@ -175,7 +188,7 @@ nav ul {
 
 .book img {
   min-height: 10vh;
-  height: 21vh;
+  height: 25vh;
 }
 
 /* Book Details Section */
@@ -193,6 +206,14 @@ nav ul {
 
 .detail-image {
   text-align: center;
+  width: 450px;
+  height: 400px;
+}
+
+.detail-image img {
+  width:100%;
+  object-fit:cover;
+  height:100%;
 }
 
 .detail-description {
@@ -301,12 +322,18 @@ nav ul {
   flex: 1 1 10rem;
 }
 
-.cart-item img {
-  width: 10rem;
+.cart-item .image img {
+  width:50%;
+  object-fit:cover;
+  height:50%;
 }
 
 .cart-item .details {
   flex: 2 1 10rem;
+}
+
+.cart-item .details>p {
+  font-size: 24;
 }
 
 .cart-item .amount {
@@ -314,9 +341,16 @@ nav ul {
 }
 
 .cart-empty {
-  position: absolute;
-  top: 48%;
-  left: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+}
+
+.cart-empty h3{
+  color: rgba(0,0,0,.4);
+  margin-bottom: 40px;
 }
 
 /* Checkout Section */
@@ -333,8 +367,22 @@ nav ul {
   margin: 3rem 0;
 }
 
+.auth-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: inherit;
+}
+
 .stripe-section {
   margin-top: 2rem;
+}
+
+:root {
+  --amplify-text-sm:var(--amplify-text-lg);
+  --amplify-text-xs:var(--amplify-text-md);
+  --amplify-text-xxs: 0,60rem;
 }
 
 @media screen and (max-width: 933px) {

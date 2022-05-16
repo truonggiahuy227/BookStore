@@ -5,6 +5,7 @@ import { AmplifyAuthenticator, AmplifySignUp } from '@aws-amplify/ui-react';
 const Auth = () => {
    
     return (
+        <div className='auth-form'>
         <AmplifyAuthenticator >
         <AmplifySignUp
           slot="sign-up"
@@ -15,6 +16,7 @@ const Auth = () => {
           ]}
         />
       </AmplifyAuthenticator>
+        </div>
     )
 
 }
